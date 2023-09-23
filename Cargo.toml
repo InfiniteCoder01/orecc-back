@@ -3,6 +3,15 @@ name = "orecc-back"
 version = "0.0.1"
 edition = "2021"
 
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+[features]
+# Arch
+x86_64 = []
+
+# Formats
+elf = ["dep:faerie"]
+
+# Defaults
+default = ["x86_64", "elf"]
 
 [dependencies]
+faerie = { version = "0.16.0", optional = true }
